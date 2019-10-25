@@ -177,13 +177,11 @@
     </template>
 
     <template v-if="widget.type == 'editor'">
-      <fm-editor
+      <vue-editor
         v-model="dataModel"
-        :width="widget.options.width"
-        :height="widget.options.height"
+        :style="{width: widget.options.width}"
       >
-
-      </fm-editor>
+      </vue-editor>
     </template>
 
     <template v-if="widget.type == 'cascader'">
@@ -198,18 +196,22 @@
 
       </el-cascader>
     </template>
+
+    <template v-if="widget.type == 'text'">
+      <span>{{dataModel}}</span>
+    </template>
   </el-form-item>
 </template>
 
 <script>
 import FmUpload from './Upload'
-import FmEditor from './Editor/tinymce'
+import { VueEditor } from "vue2-editor"
 
 export default {
   props: ['widget', 'models', 'rules', 'remote'],
   components: {
     FmUpload,
-    FmEditor
+    VueEditor
   },
   data () {
     return {

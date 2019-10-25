@@ -173,17 +173,19 @@
         </template>
 
         <template v-if="element.type == 'editor'">
-          <fm-editor
+          <vue-editor
             v-model="element.options.defaultValue"
-            :width="element.options.width"
-            :height="element.options.height"
+            :style="{width: element.options.width}"
           >
-
-          </fm-editor>
+          </vue-editor>
         </template>
 
         <template v-if="element.type=='blank'">
           <div style="height: 50px;color: #999;background: #eee;line-height:50px;text-align:center;">自定义区域</div>
+        </template>
+
+        <template v-if="element.type == 'text'">
+          <span>{{element.options.defaultValue}}</span>
         </template>
 
         <div class="widget-view-action" v-if="selectWidget.key == element.key">
@@ -200,12 +202,12 @@
 
 <script>
 import FmUpload from './Upload'
-import FmEditor from './Editor/tinymce'
+import { VueEditor } from "vue2-editor"
 export default {
   props: ['element', 'select', 'index', 'data'],
   components: {
     FmUpload,
-    FmEditor
+    VueEditor
   },
   data () {
     return {

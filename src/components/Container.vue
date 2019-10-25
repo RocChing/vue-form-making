@@ -152,7 +152,7 @@
         </cus-dialog>
       </el-container>
     </el-main>
-    <el-footer height="30px" style="font-weight: 600;">Powered by <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">GavinZhuLei</a></el-footer>
+    <el-footer height="30px" style="font-weight: 600;">Powered by <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">vue-form-making</a></el-footer>
   </el-container>
   
 </template>
@@ -203,7 +203,7 @@ export default {
     },
     basicFields: {
       type: Array,
-      default: () => ['input', 'textarea', 'number', 'radio', 'checkbox', 'time', 'date', 'rate', 'color', 'select', 'switch', 'slider']
+      default: () => ['input', 'textarea', 'number', 'radio', 'checkbox', 'time', 'date', 'rate', 'color', 'select', 'switch', 'slider', 'text']
     },
     advanceFields: {
       type: Array,
@@ -434,7 +434,6 @@ export default {
 
 <style lang="scss">
 .widget-empty{
-  background: url('../assets/form_empty.png') no-repeat;
   background-position: 50%;
 }
 
